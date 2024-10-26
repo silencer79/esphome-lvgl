@@ -20,8 +20,8 @@ font: !include
 
   - &container_styles
     <<: !include styles/container_styles.yaml
-    pad_top: 0px #10px
-    pad_bottom: 0px #10px
+    pad_top: 0px
+    pad_bottom: 0px
     pad_left: 10px
     pad_right: 10px
 
