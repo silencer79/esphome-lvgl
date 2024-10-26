@@ -1,0 +1,9 @@
+substitutions:
+  device_name: crowpanel-35-test
+  friendly_name: CrowPanel 3.5" Test
+  home_page: lighting_1
+
+packages:
+  common: !include templates/common.yaml
+  device: !include templates/devices/DIS05035H.yaml
+  layout: !include templates/layouts/480x320.yaml

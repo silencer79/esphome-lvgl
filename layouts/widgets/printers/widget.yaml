@@ -1,0 +1,38 @@
+# required vars:
+# - uid
+# - height
+# - padding
+# - bar_height
+# - bar_padding
+
+# obj:
+  <<: !include ../../styles/printer_styles.yaml
+  height: ${height}
+  pad_all: ${padding}
+  widgets:
+    - label:
+        id: ${uid}_printer_name_lbl
+        align: TOP_LEFT
+        text: "..."
+    - label:
+        id: ${uid}_print_status_lbl
+        align: TOP_RIGHT
+        text: "..."
+    - bar:
+        id: ${uid}_print_progress_bar
+        <<: !include ../../styles/printer_bar_styles.yaml
+        height: ${bar_height}
+        align: BOTTOM_MID
+        indicator:
+          bg_color: 0x00B6FF
+        widgets:
+          - label:
+              id: ${uid}_remaining_time_lbl
+              align: LEFT_MID
+              x: ${bar_padding} # RESOLUTION-SPECIFIC
+              text: "..."
+          - label:
+              id: ${uid}_end_time_lbl
+              align: RIGHT_MID
+              x: -${bar_padding} # RESOLUTION-SPECIFIC
+              text: "..."

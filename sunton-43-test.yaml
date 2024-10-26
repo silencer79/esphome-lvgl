@@ -1,0 +1,9 @@
+substitutions:
+  device_name: sunton-43-test
+  friendly_name: Sunton 4.3" Test
+  home_page: lighting
+
+packages:
+  common: !include templates/common.yaml
+  device: !include templates/devices/ESP32-8048S043.yaml
+  layout: !include templates/layouts/800x480.yaml
