@@ -4,6 +4,6 @@ substitutions:
   home_page: lighting_1
 
 packages:
-  common: !include templates/common.yaml
-  device: !include templates/devices/ESP32-2432S028R.yaml
-  layout: !include templates/layouts/320x240.yaml
+  common: !include common.yaml
+  device: !include devices/ESP32-2432S028R.yaml
+  layout: !include layouts/320x240.yaml

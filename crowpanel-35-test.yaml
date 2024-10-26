@@ -4,6 +4,6 @@ substitutions:
   home_page: lighting_1
 
 packages:
-  common: !include templates/common.yaml
-  device: !include templates/devices/DIS05035H.yaml
-  layout: !include templates/layouts/480x320.yaml
+  common: !include common.yaml
+  device: !include devices/DIS05035H.yaml
+  layout: !include layouts/480x320.yaml
