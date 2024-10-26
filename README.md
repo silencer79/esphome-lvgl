@@ -1,10 +1,10 @@
 # ESPHome configs and LVGL examples for cheap touchscreen devices
 
 ## Supported Devices
-* Sunton `ESP32-2432S028R` 2.8" with resistive touch and USB micro-B.
-* Sunton `ESP32-8048S043` 4.3" with capactivive touch and USB-C.
-* Sunton `ESP32-8048S050` 5.0" with capactivive touch and USB-C.
-* Elecrow `DIS05035H` CrowPanel 3.5" (v2.2) with resistive touch and USB-C.
+* Sunton `ESP32-2432S028R` - 2.8" with resistive touch and USB micro-B.
+* Sunton `ESP32-8048S043` - 4.3" with capactivive touch and USB-C.
+* Sunton `ESP32-8048S050` - 5.0" with capactivive touch and USB-C.
+* Elecrow CrowPanel `DIS05035H` (v2.2) - 3.5" with resistive touch and USB-C.
 
 ## File Structure
 If all you are looking for is a device-specific config then look no further than the `devices/` directory. The YAML files in there are clean and free from anything not related to the devices themselves. They are intended to be used as [Packages](https://esphome.io/components/packages.html) in a higher-level YAML, which allows for device-specific YAML and common YAML to be kept in separate files, avoiding duplicate code and making it easier to update groups of devices. 
