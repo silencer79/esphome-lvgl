@@ -16,3 +16,8 @@ Aside from the ESPHome Packages feature used to separate device-specfic YAML fro
 
 # TODO
 This readme isn't finished :)
+
+# Photos
+![Lighting Page](media/page_lighting.jpg "Lighting Page")
+![Printers Page](media/page_printers.jpg "Printers Page")
+![Living Room Page](media/page_living_room.jpg "Living Room Page")
