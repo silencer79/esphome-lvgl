@@ -1,7 +1,7 @@
 substitutions:
   device_name: sunton-43-test
   friendly_name: Sunton 4.3" Test
-  home_page: lighting
+  home_page: lighting_1
 
 packages:
   common: !include common.yaml

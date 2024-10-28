@@ -225,7 +225,7 @@ lvgl:
         then:
           lvgl.label.update:
             id: page_title
-            text: Lighting (1/2)
+            text: Lighting (1/3)
       widgets:
         - obj:
             <<: *container_styles
@@ -283,7 +283,7 @@ lvgl:
         then:
           lvgl.label.update:
             id: page_title
-            text: Lighting (2/2)
+            text: Lighting (2/3)
       widgets:
         - obj:
             <<: *container_styles
@@ -333,6 +333,46 @@ lvgl:
                       uid: upstairs_hallway_light_p2
                       entity_id: light.upstairs_hallway_light
                       text: Hallway
+                      <<: *button_widget_vars
+
+    - id: lighting_3
+      <<: *page_styles
+      on_load:
+        then:
+          lvgl.label.update:
+            id: page_title
+            text: Lighting (3/3)
+      widgets:
+        - obj:
+            <<: *container_styles
+            layout:
+              <<: *button_layout
+            widgets:
+              - button: # outdoor lights
+                  <<: !include
+                    file: widgets/buttons/icon_text_buttons/light_group_buttons/widget.yaml
+                    vars:
+                      uid: all_outside_lights
+                      entity_id: light.all_outside_lights
+                      text: Outside Lights
+                      <<: *wide_button_widget_vars
+
+              - button: # door lights
+                  <<: !include
+                    file: widgets/buttons/icon_text_buttons/light_buttons/widget.yaml
+                    vars:
+                      uid: outside_light_1
+                      entity_id: light.outside_light_1
+                      text: Door Lights
+                      <<: *button_widget_vars
+
+              - button: # deck lights
+                  <<: !include
+                    file: widgets/buttons/icon_text_buttons/light_buttons/widget.yaml
+                    vars:
+                      uid: outside_light_2
+                      entity_id: light.outside_light_2
+                      text: Deck Lights
                       <<: *button_widget_vars
 
     - id: printers
@@ -413,7 +453,7 @@ packages:
 
   living_room_tv_extra_widgets_sensor: !include { file: widgets/living_room_tv.sensor.yaml }
 
-  # lighting
+  # lighting 1
   main_floor_lights_widget_sensor: !include { file: widgets/buttons/icon_text_buttons/light_group_buttons/sensors.yaml, vars: {
     uid: main_floor_lights,
     entity_id: light.main_floor_lights
@@ -434,6 +474,7 @@ packages:
     entity_id: light.rachels_office_light
   }}
 
+  # lighting 2
   second_floor_lights_widget_sensor: !include { file: widgets/buttons/icon_text_buttons/light_group_buttons/sensors.yaml, vars: {
     uid: second_floor_lights,
     entity_id: light.second_floor_lights
@@ -462,6 +503,22 @@ packages:
   upstairs_hallway_light_p2_widget_sensor: !include { file: widgets/buttons/icon_text_buttons/light_buttons/sensors.yaml, vars: {
     uid: upstairs_hallway_light_p2,
     entity_id: light.upstairs_hallway_light
+  }}
+
+  # lighting 3
+  all_outside_lights_widget_sensor: !include { file: widgets/buttons/icon_text_buttons/light_group_buttons/sensors.yaml, vars: {
+    uid: all_outside_lights,
+    entity_id: light.all_outside_lights
+  }}
+
+  outside_light_1_widget_sensor: !include { file: widgets/buttons/icon_text_buttons/light_buttons/sensors.yaml, vars: {
+    uid: outside_light_1,
+    entity_id: light.outside_light_1
+  }}
+
+  outside_light_2_widget_sensor: !include { file: widgets/buttons/icon_text_buttons/light_buttons/sensors.yaml, vars: {
+    uid: outside_light_2,
+    entity_id: light.outside_light_2
   }}
 
   # printers
