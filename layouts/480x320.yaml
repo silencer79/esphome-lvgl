@@ -60,10 +60,11 @@ lvgl:
   top_layer:
     widgets: !include { file: widgets/navigation/widget.yaml, vars: { <<: *nav_widget_vars } }
   pages:
-    # - id: splash
-    #   on_load:
-    #     then:
-    #       script.execute: go_home
+    - id: splash
+      skip: true
+      on_load:
+        then:
+          script.execute: go_home
 
     - id: bedroom
       <<: *page_styles
