@@ -51,7 +51,7 @@ font: !include
 script:
   - id: go_home
     then:
-    - lvgl.page.show: ${home_page}
+      lvgl.page.show: ${home_page}
 
 lvgl:
   default_font: roboto_md
