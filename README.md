@@ -18,6 +18,8 @@ Aside from the Packages feature used to separate device-specfic YAML from common
 This readme isn't finished. I'll be elaborating on some more techniques being used in here, such as the modularization of the widgets using `!include` and how the stateful widget files relate to their sensor counterparts (tip, just make sure to pass the same `uid` and `entity_id` when including a widget and when including the related widget sensor).
 
 ## Photos
+These look better in real life, I promise! I took these phtoos in low-light and displays are not easy to photograph in general.
+
 4.3" 800x480  
 ![Lighting Page](media/4.3_lighting.jpg "Lighting Page")
 ![Printers Page](media/4.3_printers.jpg "Printers Page")
