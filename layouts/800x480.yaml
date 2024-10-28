@@ -40,7 +40,7 @@ font: !include
 
   - &printer_layout
     <<: !include styles/printer_layout.yaml
-    pad_row: 4
+    pad_row: 10
 
   - &printer_widget_vars
     height: 100px
@@ -219,19 +219,64 @@ lvgl:
                       entity_id: media_player.living_room_tv
                       <<: *button_widget_vars
 
-    - id: lighting
+    - id: lighting_1
       <<: *page_styles
       on_load:
         then:
           lvgl.label.update:
             id: page_title
-            text: Lighting
+            text: Lighting (1/2)
       widgets:
         - obj:
             <<: *container_styles
             layout:
               <<: *button_layout
             widgets:
+              - button: # second floor lights
+                  <<: !include
+                    file: widgets/buttons/icon_text_buttons/light_group_buttons/widget.yaml
+                    vars:
+                      uid: second_floor_lights
+                      entity_id: light.second_floor_lights
+                      text: Second Floor
+                      <<: *wide_button_widget_vars
+
+              - button: # bedroom lights
+                  <<: !include
+                    file: widgets/buttons/icon_text_buttons/light_buttons/widget.yaml
+                    vars:
+                      uid: all_bedroom_lights
+                      entity_id: light.all_bedroom_lights
+                      text: Bedroom
+                      <<: *button_widget_vars
+
+              - button: # railyn light
+                  <<: !include
+                    file: widgets/buttons/icon_text_buttons/light_buttons/widget.yaml
+                    vars:
+                      uid: railyns_light
+                      entity_id: light.railyns_light
+                      text: Railyn
+                      <<: *button_widget_vars
+
+              - button: # ryan's office light
+                  <<: !include
+                    file: widgets/buttons/icon_text_buttons/light_buttons/widget.yaml
+                    vars:
+                      uid: ryans_office_light
+                      entity_id: light.ryans_office_light
+                      text: Office
+                      <<: *button_widget_vars
+
+              - button: # upstairs hallway light
+                  <<: !include
+                    file: widgets/buttons/icon_text_buttons/light_buttons/widget.yaml
+                    vars:
+                      uid: upstairs_hallway_light_p2
+                      entity_id: light.upstairs_hallway_light
+                      text: Hallway
+                      <<: *button_widget_vars
+
               - button: # main floor lights
                   <<: !include
                     file: widgets/buttons/icon_text_buttons/light_group_buttons/widget.yaml
@@ -277,49 +322,44 @@ lvgl:
                       text: Hallway
                       <<: *button_widget_vars
 
-              - button: # second floor lights
+    - id: lighting_2
+      <<: *page_styles
+      on_load:
+        then:
+          lvgl.label.update:
+            id: page_title
+            text: Lighting (2/2)
+      widgets:
+        - obj:
+            <<: *container_styles
+            layout:
+              <<: *button_layout
+            widgets:
+              - button: # outdoor lights
                   <<: !include
                     file: widgets/buttons/icon_text_buttons/light_group_buttons/widget.yaml
                     vars:
-                      uid: second_floor_lights
-                      entity_id: light.second_floor_lights
-                      text: Second Floor
+                      uid: all_outside_lights
+                      entity_id: light.all_outside_lights
+                      text: Outside Lights
                       <<: *wide_button_widget_vars
 
-              - button: # bedroom lights
+              - button: # door lights
                   <<: !include
                     file: widgets/buttons/icon_text_buttons/light_buttons/widget.yaml
                     vars:
-                      uid: all_bedroom_lights
-                      entity_id: light.all_bedroom_lights
-                      text: Bedroom
+                      uid: outside_light_1
+                      entity_id: light.outside_light_1
+                      text: Door Lights
                       <<: *button_widget_vars
 
-              - button: # railyn light
+              - button: # deck lights
                   <<: !include
                     file: widgets/buttons/icon_text_buttons/light_buttons/widget.yaml
                     vars:
-                      uid: railyns_light
-                      entity_id: light.railyns_light
-                      text: Railyn
-                      <<: *button_widget_vars
-
-              - button: # ryan's office light
-                  <<: !include
-                    file: widgets/buttons/icon_text_buttons/light_buttons/widget.yaml
-                    vars:
-                      uid: ryans_office_light
-                      entity_id: light.ryans_office_light
-                      text: Office
-                      <<: *button_widget_vars
-
-              - button: # upstairs hallway light
-                  <<: !include
-                    file: widgets/buttons/icon_text_buttons/light_buttons/widget.yaml
-                    vars:
-                      uid: upstairs_hallway_light_p2
-                      entity_id: light.upstairs_hallway_light
-                      text: Hallway
+                      uid: outside_light_2
+                      entity_id: light.outside_light_2
+                      text: Deck Lights
                       <<: *button_widget_vars
 
     - id: printers
@@ -401,26 +441,6 @@ packages:
   living_room_tv_extra_widgets_sensor: !include { file: widgets/living_room_tv.sensor.yaml }
 
   # lighting
-  main_floor_lights_widget_sensor: !include { file: widgets/buttons/icon_text_buttons/light_group_buttons/sensors.yaml, vars: {
-    uid: main_floor_lights,
-    entity_id: light.main_floor_lights
-  }}
-
-  all_living_room_lights_widget_sensor: !include { file: widgets/buttons/icon_text_buttons/light_buttons/sensors.yaml, vars: {
-    uid: all_living_room_lights,
-    entity_id: light.all_living_room_lights
-  }}
-
-  kitchen_light_widget_sensor: !include { file: widgets/buttons/icon_text_buttons/light_buttons/sensors.yaml, vars: {
-    uid: kitchen_light,
-    entity_id: light.kitchen_light
-  }}
-
-  rachels_office_light_widget_sensor: !include { file: widgets/buttons/icon_text_buttons/light_buttons/sensors.yaml, vars: {
-    uid: rachels_office_light,
-    entity_id: light.rachels_office_light
-  }}
-
   second_floor_lights_widget_sensor: !include { file: widgets/buttons/icon_text_buttons/light_group_buttons/sensors.yaml, vars: {
     uid: second_floor_lights,
     entity_id: light.second_floor_lights
@@ -449,6 +469,42 @@ packages:
   upstairs_hallway_light_p2_widget_sensor: !include { file: widgets/buttons/icon_text_buttons/light_buttons/sensors.yaml, vars: {
     uid: upstairs_hallway_light_p2,
     entity_id: light.upstairs_hallway_light
+  }}
+
+  main_floor_lights_widget_sensor: !include { file: widgets/buttons/icon_text_buttons/light_group_buttons/sensors.yaml, vars: {
+    uid: main_floor_lights,
+    entity_id: light.main_floor_lights
+  }}
+
+  all_living_room_lights_widget_sensor: !include { file: widgets/buttons/icon_text_buttons/light_buttons/sensors.yaml, vars: {
+    uid: all_living_room_lights,
+    entity_id: light.all_living_room_lights
+  }}
+
+  kitchen_light_widget_sensor: !include { file: widgets/buttons/icon_text_buttons/light_buttons/sensors.yaml, vars: {
+    uid: kitchen_light,
+    entity_id: light.kitchen_light
+  }}
+
+  rachels_office_light_widget_sensor: !include { file: widgets/buttons/icon_text_buttons/light_buttons/sensors.yaml, vars: {
+    uid: rachels_office_light,
+    entity_id: light.rachels_office_light
+  }}
+
+  # lighting 2
+  all_outside_lights_widget_sensor: !include { file: widgets/buttons/icon_text_buttons/light_group_buttons/sensors.yaml, vars: {
+    uid: all_outside_lights,
+    entity_id: light.all_outside_lights
+  }}
+
+  outside_light_1_widget_sensor: !include { file: widgets/buttons/icon_text_buttons/light_buttons/sensors.yaml, vars: {
+    uid: outside_light_1,
+    entity_id: light.outside_light_1
+  }}
+
+  outside_light_2_widget_sensor: !include { file: widgets/buttons/icon_text_buttons/light_buttons/sensors.yaml, vars: {
+    uid: outside_light_2,
+    entity_id: light.outside_light_2
   }}
 
   # printers
