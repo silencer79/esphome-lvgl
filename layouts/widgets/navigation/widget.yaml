@@ -57,7 +57,7 @@
             flex_grow: 1
             on_press:
               then:
-                script.execute: go_home
+                lvgl.page.show: ${home_page}
             widgets:
               - label:
                   align: CENTER

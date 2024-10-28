@@ -48,11 +48,6 @@ font: !include
     bar_height: 22px
     bar_padding: 5
 
-script:
-  - id: go_home
-    then:
-    - lvgl.page.show: ${home_page}
-
 lvgl:
   default_font: roboto_md
   disp_bg_color: 0x42495A # ?
@@ -64,7 +59,7 @@ lvgl:
       skip: true
       on_load:
         then:
-          script.execute: go_home
+          lvgl.page.show: ${home_page}
 
     - id: bedroom
       <<: *page_styles
