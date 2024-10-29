@@ -322,8 +322,8 @@ lvgl:
                   <<: !include
                     file: widgets/buttons/icon_text_buttons/light_buttons/widget.yaml
                     vars:
-                      uid: ryans_office_light
-                      entity_id: light.ryans_office_light
+                      uid: all_ryan_s_office_lights
+                      entity_id: light.all_ryan_s_office_lights
                       text: Office
                       <<: *button_widget_vars
 
@@ -492,8 +492,8 @@ packages:
   }}
 
   ryans_office_light_widget_sensor: !include { file: widgets/buttons/icon_text_buttons/light_buttons/sensors.yaml, vars: {
-    uid: ryans_office_light,
-    entity_id: light.ryans_office_light
+    uid: all_ryan_s_office_lights,
+    entity_id: light.all_ryan_s_office_lights
   }}
 
   upstairs_hallway_light_p1_widget_sensor: !include { file: widgets/buttons/icon_text_buttons/light_buttons/sensors.yaml, vars: {
