@@ -46,7 +46,7 @@ font: !include
     height: 72px
     padding: 8px
     bar_height: 30px
-    bar_padding: 5
+    bar_padding: 8
 
 script:
   - id: go_home
