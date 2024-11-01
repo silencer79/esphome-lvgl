@@ -6,6 +6,11 @@
 * Sunton `ESP32-8048S050` - 5.0" with capactivive touch and USB-C.
 * Elecrow CrowPanel `DIS05035H` (v2.2) - 3.5" with resistive touch and USB-C.
 
+## Changelog
+### 2024-11-01
+* [Breaking change] Moved `device_name` and `friendly_name` from `substitutions:` to `esphome:` at the top-level. This allows for ESPHome's Rename Hostname feature to work again.
+* Added an `id` to each device's `display:` and `touchscreen:` config to allow extending them more easily (for example, if you want to rotate a display / touchscreen from the top-level config for a specific device).
+
 ## File Structure
 If all you are looking for is a device-specific config then look no further than the `devices/` directory. The YAML files in there are clean and free from anything not related to the devices themselves. They are intended to be used as [Packages](https://esphome.io/components/packages.html) in a higher-level YAML config file, which allows for device-specific settings and common settings to be kept in separate files, avoiding duplicate code and making it easier to update groups of devices. 
 

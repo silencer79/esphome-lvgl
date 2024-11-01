@@ -47,7 +47,8 @@ light:
     restore_mode: ALWAYS_ON
 
 display:
-  - platform: rpi_dpi_rgb
+  - id: main_display
+    platform: rpi_dpi_rgb
     dimensions:
       width: 800
       height: 480
@@ -73,6 +74,7 @@ display:
     auto_clear_enabled: false
 
 touchscreen:
+  id: main_touchscreen
   platform: gt911
   address: 0x5D
   update_interval: 16ms

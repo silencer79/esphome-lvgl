@@ -1,6 +1,8 @@
-substitutions:
-  device_name: sunton-28-test
+esphome:
+  name: sunton-28-test
   friendly_name: Sunton 2.8" Test
+
+substitutions:
   home_page: lighting_1
 
 packages:

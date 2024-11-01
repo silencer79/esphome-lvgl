@@ -28,7 +28,8 @@ light:
     restore_mode: ALWAYS_ON
 
 display:
-  - platform: ili9xxx
+  - id: main_display
+    platform: ili9xxx
     model: ILI9488_A
     dimensions:
       height: 480
@@ -48,6 +49,7 @@ display:
     auto_clear_enabled: false
 
 touchscreen:
+  id: main_touchscreen
   platform: xpt2046
   cs_pin:
     number: 12 #33 on v2.0

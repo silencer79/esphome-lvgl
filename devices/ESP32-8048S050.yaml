@@ -47,7 +47,8 @@ light:
     restore_mode: ALWAYS_ON
 
 display:
-  - platform: rpi_dpi_rgb
+  - id: main_display
+    platform: rpi_dpi_rgb
     dimensions:
       width: 800
       height: 480

@@ -57,7 +57,8 @@ light:
 #     update_interval: 60s
 
 display:
-  - platform: ili9xxx
+  - id: main_display
+    platform: ili9xxx
     model: ILI9341
     spi_id: tft
     cs_pin:
@@ -71,6 +72,7 @@ display:
     auto_clear_enabled: false
 
 touchscreen:
+  id: main_touchscreen
   platform: xpt2046
   spi_id: touch
   cs_pin: 33

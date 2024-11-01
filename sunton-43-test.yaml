@@ -1,6 +1,8 @@
-substitutions:
-  device_name: sunton-43-test
+esphome:
+  name: sunton-43-test
   friendly_name: Sunton 4.3" Test
+
+substitutions:
   home_page: lighting_1
 
 packages:

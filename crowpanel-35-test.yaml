@@ -1,6 +1,8 @@
-substitutions:
-  device_name: crowpanel-35-test
+esphome:
+  name: crowpanel-35-test
   friendly_name: CrowPanel 3.5" Test
+
+substitutions:
   home_page: lighting_1
 
 packages:

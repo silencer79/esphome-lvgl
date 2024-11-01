@@ -1,6 +1,8 @@
-substitutions:
-  device_name: sunton-50-test
+esphome:
+  name: sunton-50-test
   friendly_name: Sunton 5.0" Test
+
+substitutions:
   home_page: lighting_1
 
 packages:
