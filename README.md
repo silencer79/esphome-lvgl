@@ -9,9 +9,11 @@
 
 ## Changelog
 ### 2024-11-06
-* Update `common.yaml` to require ESPHome min version 2024.11.0 (currently in dev) due to upcoming changes to display some display drivers, and to add support for Guition device.
+* Update `common.yaml` to require ESPHome min version 2024.11.0 (currently in dev) due to upcoming changes to some display and touch drivers, and to add support for the Guition device which uses drivers not supported on the stable release as of yet.
 * Update Sunton `ESP32-8048S043` and `ESP32-8048S050` configs to support upcoming ESPHome changes that affect display & touch rotation.
 * Add support for Guition `JC3248W535` 3.5" device.
+* Tweak devce configs so that majority of sections are in list format rather than a mix of formats.
+* Fix touchscreen configs for devices with resistive touch on newer ESPHome builds.
 ### 2024-11-01
 * [Breaking change] Moved `device_name` and `friendly_name` from `substitutions:` to `esphome:` at the top-level. This allows for ESPHome's Rename Hostname feature to work again.
 * Added an `id` to each device's `display:` and `touchscreen:` config to allow extending them more easily (for example, if you want to rotate a display / touchscreen from the top-level config for a specific device).

@@ -22,13 +22,13 @@ psram:
   speed: 80MHz # 120MHz is not supported and falls back to 40MHz
 
 spi:
-  type: quad
-  clk_pin: 47
-  data_pins: [21, 48, 40, 39]
+  - type: quad
+    clk_pin: 47
+    data_pins: [21, 48, 40, 39]
 
 i2c:
-  sda: 4
-  scl: 8
+  - sda: 4
+    scl: 8
 
 output:
   - id: gpio_backlight_pwm
@@ -58,13 +58,13 @@ display:
     auto_clear_enabled: false
 
 touchscreen:
-  id: main_touchscreen
-  platform: axs15231
-  # on_touch:
-  #   - lambda: |-
-  #         ESP_LOGI("cal", "x=%d, y=%d, x_raw=%d, y_raw=%0d",
-  #           touch.x,
-  #           touch.y,
-  #           touch.x_raw,
-  #           touch.y_raw
-  #         );
+  - id: main_touchscreen
+    platform: axs15231
+    # on_touch:
+    #   - lambda: |-
+    #         ESP_LOGI("cal", "x=%d, y=%d, x_raw=%d, y_raw=%0d",
+    #           touch.x,
+    #           touch.y,
+    #           touch.x_raw,
+    #           touch.y_raw
+    #         );

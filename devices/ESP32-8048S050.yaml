@@ -29,9 +29,9 @@ psram:
   speed: 80MHz
 
 i2c:
-  sda: 19
-  scl: 20
-  scan: true
+  - sda: 19
+    scl: 20
+    scan: true
 
 output:
   - id: gpio_backlight_pwm
@@ -74,19 +74,19 @@ display:
     auto_clear_enabled: false
 
 touchscreen:
-  id: main_touchscreen
-  platform: gt911
-  address: 0x5D
-  update_interval: 16ms
-  transform:
-    mirror_x: true
-    swap_xy: true
-  # reset_pin: 38
-  # on_touch:
-  #   - lambda: |-
-  #         ESP_LOGI("cal", "x=%d, y=%d, x_raw=%d, y_raw=%0d",
-  #           touch.x,
-  #           touch.y,
-  #           touch.x_raw,
-  #           touch.y_raw
-  #         );
+  - id: main_touchscreen
+    platform: gt911
+    address: 0x5D
+    update_interval: 16ms
+    transform:
+      mirror_x: true
+      swap_xy: true
+    # reset_pin: 38
+    # on_touch:
+    #   - lambda: |-
+    #         ESP_LOGI("cal", "x=%d, y=%d, x_raw=%d, y_raw=%0d",
+    #           touch.x,
+    #           touch.y,
+    #           touch.x_raw,
+    #           touch.y_raw
+    #         );

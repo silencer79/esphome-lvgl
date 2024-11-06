@@ -72,25 +72,27 @@ display:
     auto_clear_enabled: false
 
 touchscreen:
-  id: main_touchscreen
-  platform: xpt2046
-  spi_id: touch
-  cs_pin: 33
-  interrupt_pin: 36
-  threshold: 400
-  calibration:
-    x_min: 3860
-    x_max: 280
-    y_min: 340
-    y_max: 3860
-  # on_touch:
-  #   - lambda: |-
-  #         ESP_LOGI("cal", "x=%d, y=%d, x_raw=%d, y_raw=%0d",
-  #           touch.x,
-  #           touch.y,
-  #           touch.x_raw,
-  #           touch.y_raw
-  #         );
+  - id: main_touchscreen
+    platform: xpt2046
+    spi_id: touch
+    cs_pin: 33
+    interrupt_pin: 36
+    threshold: 400
+    calibration:
+      x_min: 280
+      x_max: 3860
+      y_min: 340
+      y_max: 3860
+    transform:
+      mirror_x: true
+    # on_touch:
+    #   - lambda: |-
+    #         ESP_LOGI("cal", "x=%d, y=%d, x_raw=%d, y_raw=%0d",
+    #           touch.x,
+    #           touch.y,
+    #           touch.x_raw,
+    #           touch.y_raw
+    #         );
 
 lvgl:
   buffer_size: 25%
