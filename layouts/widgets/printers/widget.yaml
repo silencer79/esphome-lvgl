@@ -1,5 +1,6 @@
 # required vars:
 # - uid
+# - name
 # - height
 # - padding
 # - bar_height
@@ -11,9 +12,8 @@
   pad_all: ${padding}
   widgets:
     - label:
-        id: ${uid}_printer_name_lbl
         align: TOP_LEFT
-        text: "..."
+        text: ${name}
     - label:
         id: ${uid}_print_status_lbl
         align: TOP_RIGHT

@@ -394,6 +394,7 @@ lvgl:
                     file: widgets/printers/widget.yaml
                     vars:
                       uid: printer_1
+                      name: 1 - Fred
                       <<: *printer_widget_vars
 
               - obj: # printer 2
@@ -401,6 +402,7 @@ lvgl:
                     file: widgets/printers/widget.yaml
                     vars:
                       uid: printer_2
+                      name: 2 - Wilma
                       <<: *printer_widget_vars
 
               - obj: # printer 3
@@ -408,6 +410,7 @@ lvgl:
                     file: widgets/printers/widget.yaml
                     vars:
                       uid: printer_3
+                      name: 3 - Barney
                       <<: *printer_widget_vars
 
               - obj: # printer 4
@@ -415,6 +418,7 @@ lvgl:
                     file: widgets/printers/widget.yaml
                     vars:
                       uid: printer_4
+                      name: 4 - Betty
                       <<: *printer_widget_vars
 
     - id: printers_2
@@ -435,6 +439,7 @@ lvgl:
                     file: widgets/printers/widget.yaml
                     vars:
                       uid: printer_5
+                      name: 4 - Dinno
                       <<: *printer_widget_vars
 
 packages:
