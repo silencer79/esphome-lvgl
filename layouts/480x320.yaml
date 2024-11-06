@@ -55,7 +55,6 @@ script:
 
 lvgl:
   default_font: roboto_md
-  disp_bg_color: 0x42495A # ?
   theme: !include themes/main.yaml
   top_layer:
     widgets: !include { file: widgets/navigation/widget.yaml, vars: { <<: *nav_widget_vars } }
