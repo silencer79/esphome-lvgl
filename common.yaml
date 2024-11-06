@@ -1,3 +1,6 @@
+esphome:
+  min_version: 2024.11.0
+
 logger:
   level: INFO
 
