@@ -24,6 +24,7 @@ font: !include
     pad_bottom: 0px
     pad_left: 4px
     pad_right: 4px
+    scrollable: false # prevents scrollbars on pages where space is used up to the last pixel
 
   - &button_layout
     <<: !include styles/button_layout.yaml
