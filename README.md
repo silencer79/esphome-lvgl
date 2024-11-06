@@ -1,12 +1,17 @@
 # ESPHome + LVGL on cheap touchscreen devices
 
 ## Supported Devices
-* Sunton `ESP32-2432S028R` - 2.8" with resistive touch and USB micro-B.
-* Sunton `ESP32-8048S043` - 4.3" with capactivive touch and USB-C.
-* Sunton `ESP32-8048S050` - 5.0" with capactivive touch and USB-C.
-* Elecrow CrowPanel `DIS05035H` (v2.2) - 3.5" with resistive touch and USB-C.
+* Guition `JC3248W535` 3.5" with capacitive touch and USB-C. [AliExpress Link](https://www.aliexpress.com/item/1005007566046827.html).
+* Sunton `ESP32-2432S028R` 2.8" with resistive touch and USB micro-B. [AliExpress Link](https://www.aliexpress.com/item/1005004502250619.html).
+* Sunton `ESP32-8048S043` 4.3" with capactivive touch and USB-C. [AliExpress Link](https://www.aliexpress.com/item/1005004788147691.html).
+* Sunton `ESP32-8048S050` 5.0" with capactivive touch and USB-C. [AliExpress Link](https://www.aliexpress.com/item/1005004952694042.html).
+* Elecrow CrowPanel `DIS05035H` (v2.2) 3.5" with resistive touch and USB-C. [Manufacturer's Link](https://www.elecrow.com/.esp32-display-3-5-inch-hmi-display-spi-tft-lcd-touch-screen.html).
 
 ## Changelog
+### 2024-11-06
+* Update `common.yaml` to require ESPHome min version 2024.11.0 (currently in dev) due to upcoming changes to display some display drivers, and to add support for Guition device.
+* Update Sunton `ESP32-8048S043` and `ESP32-8048S050` configs to support upcoming ESPHome changes that affect display & touch rotation.
+* Add support for Guition `JC3248W535` 3.5" device.
 ### 2024-11-01
 * [Breaking change] Moved `device_name` and `friendly_name` from `substitutions:` to `esphome:` at the top-level. This allows for ESPHome's Rename Hostname feature to work again.
 * Added an `id` to each device's `display:` and `touchscreen:` config to allow extending them more easily (for example, if you want to rotate a display / touchscreen from the top-level config for a specific device).
