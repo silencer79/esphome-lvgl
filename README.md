@@ -54,14 +54,18 @@ This readme isn't finished. I'll be elaborating on some more techniques being us
 ## Photos
 These look better in real life, I promise! I took these photos in low-light and displays are not easy to photograph in general.
 
-4.3" 800x480  
-![Lighting Page](media/4.3_lighting.jpg "Lighting Page")
-![Printers Page](media/4.3_printers.jpg "Printers Page")
+4.3" 800x480 (Sunton ESP32-8048S043)  
+![Lighting Page](media/sunton_4.3_lighting.jpg "Lighting Page")
+![Printers Page](media/sunton_4.3_printers.jpg "Printers Page")
 
-3.5" 480x320  
-![Lighting Page](media/3.5_lighting.jpg "Lighting Page")
-![Printers Page](media/3.5_printers.jpg "Printers Page")
+3.5" 480x320 (Guition JC3248W535)  
+![Lighting Page](media/guition_3.5_lighting.jpg "Lighting Page")
+![Printers Page](media/guition_3.5_printers.jpg "Printers Page")  
 
-2.8" 320x240  
-![Lighting Page](media/2.8_lighting.jpg "Lighting Page")
-![Printers Page](media/2.8_printers.jpg "Printers Page")
+3.5" 480x320 (Elecrow DIS05035H)  
+![Lighting Page](media/elecrow_3.5_lighting.jpg "Lighting Page")
+![Printers Page](media/elecrow_3.5_printers.jpg "Printers Page")
+
+2.8" 320x240 (Sunton ESP32-2432S028R)  
+![Lighting Page](media/sunton_2.8_lighting.jpg "Lighting Page")
+![Printers Page](media/sunton_2.8_printers.jpg "Printers Page")
