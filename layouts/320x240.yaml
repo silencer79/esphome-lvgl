@@ -58,7 +58,10 @@ lvgl:
   default_font: roboto_md
   theme: !include themes/main.yaml
   top_layer:
-    widgets: !include { file: widgets/navigation/widget.yaml, vars: { <<: *nav_widget_vars } }
+    widgets:
+      - <<: !include { file: widgets/header/widget.yaml, vars: { <<: *nav_widget_vars } }
+      - <<: !include { file: widgets/footer/widget.yaml, vars: { <<: *nav_widget_vars } }
+      - <<: !include { file: widgets/boot_screen/widget.yaml }
   pages:
     - id: splash
       skip: true
