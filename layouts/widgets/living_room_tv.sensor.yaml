@@ -4,8 +4,7 @@ binary_sensor:
     entity_id: media_player.living_room_tv
     publish_initial_state: true
     on_state:
-      then:
-        if:
+      - if:
           condition:
             binary_sensor.is_on: living_room_tv
           then:

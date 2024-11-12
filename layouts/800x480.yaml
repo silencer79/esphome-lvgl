@@ -51,7 +51,7 @@ font: !include
 script:
   - id: go_home
     then:
-    - lvgl.page.show: ${home_page}
+      - lvgl.page.show: ${home_page}
 
 lvgl:
   default_font: roboto_md
@@ -65,14 +65,12 @@ lvgl:
     - id: splash
       skip: true
       on_load:
-        then:
-          script.execute: go_home
+        - script.execute: go_home
 
     - id: bedroom
       <<: *page_styles
       on_load:
-        then:
-          lvgl.label.update:
+        - lvgl.label.update:
             id: page_title
             text: Bedroom
       widgets:
@@ -143,8 +141,7 @@ lvgl:
     - id: living_room
       <<: *page_styles
       on_load:
-        then:
-          lvgl.label.update:
+        - lvgl.label.update:
             id: page_title
             text: Living Room
       widgets:
@@ -225,8 +222,7 @@ lvgl:
     - id: lighting_1
       <<: *page_styles
       on_load:
-        then:
-          lvgl.label.update:
+        - lvgl.label.update:
             id: page_title
             text: Lighting (1/2)
       widgets:
@@ -328,8 +324,7 @@ lvgl:
     - id: lighting_2
       <<: *page_styles
       on_load:
-        then:
-          lvgl.label.update:
+        - lvgl.label.update:
             id: page_title
             text: Lighting (2/2)
       widgets:
@@ -368,8 +363,7 @@ lvgl:
     - id: printers
       <<: *page_styles
       on_load:
-        then:
-          lvgl.label.update:
+        - lvgl.label.update:
             id: page_title
             text: Printers
       widgets:
@@ -415,128 +409,131 @@ lvgl:
                     file: widgets/printers/widget.yaml
                     vars:
                       uid: printer_5
-                      name: 4 - Dinno
+                      name: 5 - Dinno
                       <<: *printer_widget_vars
 
 packages:
-  # navigation
-  navigation_sensor: !include { file: widgets/navigation/sensors.yaml }
+  # header
+  header_sensors: !include { file: widgets/header/sensors.yaml }
+
+  # boot screen
+  boot_screen_sensors: !include { file: widgets/boot_screen/sensors.yaml }
 
   # bedroom
-  bedroom_tv_widget_sensor: !include { file: widgets/bedroom_tv.sensor.yaml }
+  bedroom_tv_widget_sensors: !include { file: widgets/bedroom_tv.sensor.yaml }
 
-  bedroom_light_1_widget_sensor: !include { file: widgets/buttons/icon_text_buttons/light_buttons/sensors.yaml, vars: {
+  bedroom_light_1_widget_sensors: !include { file: widgets/buttons/icon_text_buttons/light_buttons/sensors.yaml, vars: {
     uid: bedroom_light_1,
     entity_id: light.bedroom_light_1
   }}
 
-  bedroom_light_2_widget_sensor: !include { file: widgets/buttons/icon_text_buttons/light_buttons/sensors.yaml, vars: {
+  bedroom_light_2_widget_sensors: !include { file: widgets/buttons/icon_text_buttons/light_buttons/sensors.yaml, vars: {
     uid: bedroom_light_2,
     entity_id: light.bedroom_light_2
   }}
 
-  bedroom_light_3_widget_sensor: !include { file: widgets/buttons/icon_text_buttons/light_buttons/sensors.yaml, vars: {
+  bedroom_light_3_widget_sensors: !include { file: widgets/buttons/icon_text_buttons/light_buttons/sensors.yaml, vars: {
     uid: bedroom_light_3,
     entity_id: light.bedroom_light_3
   }}
 
   # living_room
-  living_room_tv_widget_sensor: !include { file: widgets/buttons/icon_buttons/stateful_sensors.yaml, vars: {
+  living_room_tv_widget_sensors: !include { file: widgets/buttons/icon_buttons/stateful_sensors.yaml, vars: {
     uid: living_room_tv,
     entity_id: media_player.living_room_tv
   }}
 
-  living_room_tv_extra_widgets_sensor: !include { file: widgets/living_room_tv.sensor.yaml }
+  living_room_tv_extra_widgets_sensors: !include { file: widgets/living_room_tv.sensor.yaml }
 
   # lighting
-  second_floor_lights_widget_sensor: !include { file: widgets/buttons/icon_text_buttons/light_group_buttons/sensors.yaml, vars: {
+  second_floor_lights_widget_sensors: !include { file: widgets/buttons/icon_text_buttons/light_group_buttons/sensors.yaml, vars: {
     uid: second_floor_lights,
     entity_id: light.second_floor_lights
   }}
 
-  all_bedroom_lights_widget_sensor: !include { file: widgets/buttons/icon_text_buttons/light_buttons/sensors.yaml, vars: {
+  all_bedroom_lights_widget_sensors: !include { file: widgets/buttons/icon_text_buttons/light_buttons/sensors.yaml, vars: {
     uid: all_bedroom_lights,
     entity_id: light.all_bedroom_lights
   }}
 
-  railyns_light_widget_sensor: !include { file: widgets/buttons/icon_text_buttons/light_buttons/sensors.yaml, vars: {
+  railyns_light_widget_sensors: !include { file: widgets/buttons/icon_text_buttons/light_buttons/sensors.yaml, vars: {
     uid: railyns_light,
     entity_id: light.railyns_light
   }}
 
-  ryans_office_light_widget_sensor: !include { file: widgets/buttons/icon_text_buttons/light_buttons/sensors.yaml, vars: {
+  ryans_office_light_widget_sensors: !include { file: widgets/buttons/icon_text_buttons/light_buttons/sensors.yaml, vars: {
     uid: all_ryan_s_office_lights,
     entity_id: light.all_ryan_s_office_lights
   }}
 
-  upstairs_hallway_light_p1_widget_sensor: !include { file: widgets/buttons/icon_text_buttons/light_buttons/sensors.yaml, vars: {
+  upstairs_hallway_light_p1_widget_sensors: !include { file: widgets/buttons/icon_text_buttons/light_buttons/sensors.yaml, vars: {
     uid: upstairs_hallway_light_p1,
     entity_id: light.upstairs_hallway_light
   }}
 
-  upstairs_hallway_light_p2_widget_sensor: !include { file: widgets/buttons/icon_text_buttons/light_buttons/sensors.yaml, vars: {
+  upstairs_hallway_light_p2_widget_sensors: !include { file: widgets/buttons/icon_text_buttons/light_buttons/sensors.yaml, vars: {
     uid: upstairs_hallway_light_p2,
     entity_id: light.upstairs_hallway_light
   }}
 
-  main_floor_lights_widget_sensor: !include { file: widgets/buttons/icon_text_buttons/light_group_buttons/sensors.yaml, vars: {
+  main_floor_lights_widget_sensors: !include { file: widgets/buttons/icon_text_buttons/light_group_buttons/sensors.yaml, vars: {
     uid: main_floor_lights,
     entity_id: light.main_floor_lights
   }}
 
-  all_living_room_lights_widget_sensor: !include { file: widgets/buttons/icon_text_buttons/light_buttons/sensors.yaml, vars: {
+  all_living_room_lights_widget_sensors: !include { file: widgets/buttons/icon_text_buttons/light_buttons/sensors.yaml, vars: {
     uid: all_living_room_lights,
     entity_id: light.all_living_room_lights
   }}
 
-  kitchen_light_widget_sensor: !include { file: widgets/buttons/icon_text_buttons/light_buttons/sensors.yaml, vars: {
+  kitchen_light_widget_sensors: !include { file: widgets/buttons/icon_text_buttons/light_buttons/sensors.yaml, vars: {
     uid: kitchen_light,
     entity_id: light.kitchen_light
   }}
 
-  rachels_office_light_widget_sensor: !include { file: widgets/buttons/icon_text_buttons/light_buttons/sensors.yaml, vars: {
+  rachels_office_light_widget_sensors: !include { file: widgets/buttons/icon_text_buttons/light_buttons/sensors.yaml, vars: {
     uid: rachels_office_light,
     entity_id: light.rachels_office_light
   }}
 
   # lighting 2
-  all_outside_lights_widget_sensor: !include { file: widgets/buttons/icon_text_buttons/light_group_buttons/sensors.yaml, vars: {
+  all_outside_lights_widget_sensors: !include { file: widgets/buttons/icon_text_buttons/light_group_buttons/sensors.yaml, vars: {
     uid: all_outside_lights,
     entity_id: light.all_outside_lights
   }}
 
-  outside_light_1_widget_sensor: !include { file: widgets/buttons/icon_text_buttons/light_buttons/sensors.yaml, vars: {
+  outside_light_1_widget_sensors: !include { file: widgets/buttons/icon_text_buttons/light_buttons/sensors.yaml, vars: {
     uid: outside_light_1,
     entity_id: light.outside_light_1
   }}
 
-  outside_light_2_widget_sensor: !include { file: widgets/buttons/icon_text_buttons/light_buttons/sensors.yaml, vars: {
+  outside_light_2_widget_sensors: !include { file: widgets/buttons/icon_text_buttons/light_buttons/sensors.yaml, vars: {
     uid: outside_light_2,
     entity_id: light.outside_light_2
   }}
 
   # printers
-  printer_1_widget_sensor: !include { file: widgets/printers/sensors.yaml, vars: {
+  printer_1_widget_sensors: !include { file: widgets/printers/sensors.yaml, vars: {
     uid: printer_1,
     entity_id_prefix: p1s_1
   }}
 
-  printer_2_widget_sensor: !include { file: widgets/printers/sensors.yaml, vars: {
+  printer_2_widget_sensors: !include { file: widgets/printers/sensors.yaml, vars: {
     uid: printer_2,
     entity_id_prefix: p1s_2
   }}
 
-  printer_3_widget_sensor: !include { file: widgets/printers/sensors.yaml, vars: {
+  printer_3_widget_sensors: !include { file: widgets/printers/sensors.yaml, vars: {
     uid: printer_3,
     entity_id_prefix: p1s_3
   }}
 
-  printer_4_widget_sensor: !include { file: widgets/printers/sensors.yaml, vars: {
+  printer_4_widget_sensors: !include { file: widgets/printers/sensors.yaml, vars: {
     uid: printer_4,
     entity_id_prefix: p1s_4
   }}
 
-  printer_5_widget_sensor: !include { file: widgets/printers/sensors.yaml, vars: {
+  printer_5_widget_sensors: !include { file: widgets/printers/sensors.yaml, vars: {
     uid: printer_5,
     entity_id_prefix: p1s_5
   }}

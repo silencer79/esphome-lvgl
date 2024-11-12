@@ -4,8 +4,7 @@ binary_sensor:
     entity_id: media_player.bedroom_android_tv
     publish_initial_state: true
     on_state:
-      then:
-        if:
+      - if:
           condition:
             binary_sensor.is_on: bedroom_android_tv
           then:
