@@ -76,7 +76,6 @@ sensor:
     platform: homeassistant
     entity_id: sensor.${entity_id_prefix}_print_progress
     on_value:
-      then:
-        - lvgl.bar.update:
-            id: ${uid}_print_progress_bar
-            value: !lambda "return x;"
+      - lvgl.bar.update:
+          id: ${uid}_print_progress_bar
+          value: !lambda return x;
