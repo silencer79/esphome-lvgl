@@ -10,6 +10,43 @@ text_sensor:
       - lvgl.label.update:
           id: ${uid}_print_status_lbl
           text: !lambda return x;
+      - if:
+          condition:
+            - text_sensor.state:
+                id: ${uid}_print_status
+                state: 'Failed'
+          then:
+            - lvgl.bar.update:
+                id: ${uid}_print_progress_bar
+                indicator:
+                  bg_color: 0xFF0000
+          else:
+            - if:
+                condition:
+                  - text_sensor.state:
+                      id: ${uid}_print_status
+                      state: 'Pause'
+                then:
+                  - lvgl.bar.update:
+                      id: ${uid}_print_progress_bar
+                      indicator:
+                        bg_color: 0xFFAF00
+                else:
+                  - if:
+                      condition:
+                        - text_sensor.state:
+                            id: ${uid}_print_status
+                            state: 'Finish'
+                      then:
+                        - lvgl.bar.update:
+                            id: ${uid}_print_progress_bar
+                            indicator:
+                              bg_color: 0x00FF86
+                      else:
+                        - lvgl.bar.update:
+                            id: ${uid}_print_progress_bar
+                            indicator:
+                              bg_color: 0x00B6FF
 
   - id: ${uid}_remaining_time
     platform: homeassistant
