@@ -189,14 +189,14 @@ lvgl:
                   on_short_click:
                     - homeassistant.action:
                         action: media_player.media_play_pause
-                        data: { entity_id: media_player.living_room_tv }
+                        data: { entity_id: media_player.wohnzimmer }
 
               - button: # volume up
                   <<: !include
                     file: widgets/buttons/icon_buttons/volume_buttons/vol_up.yaml
                     vars:
                       uid: living_room_tv_vol_up
-                      entity_id: media_player.living_room_tv
+                      entity_id: media_player.wohnzimmer
                       <<: *button_widget_vars
 
               - button: # stop
@@ -209,14 +209,14 @@ lvgl:
                   on_short_click:
                     - homeassistant.action:
                         action: media_player.media_stop
-                        data: { entity_id: media_player.living_room_tv }
+                        data: { entity_id: media_player.wohnzimmer }
 
               - button: # volume down
                   <<: !include
                     file: widgets/buttons/icon_buttons/volume_buttons/vol_down.yaml
                     vars:
                       uid: living_room_tv_vol_down
-                      entity_id: media_player.living_room_tv
+                      entity_id: media_player.wohnzimmer
                       <<: *button_widget_vars
 
     - id: lighting_1
@@ -440,7 +440,7 @@ packages:
   # living_room
   living_room_tv_widget_sensors: !include { file: widgets/buttons/icon_buttons/stateful_sensors.yaml, vars: {
     uid: living_room_tv,
-    entity_id: media_player.living_room_tv
+    entity_id: media_player.wohnzimmer
   }}
 
   living_room_tv_extra_widgets_sensors: !include { file: widgets/living_room_tv.sensor.yaml }
