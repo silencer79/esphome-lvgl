@@ -154,7 +154,7 @@ lvgl:
                   <<: !include
                     file: widgets/buttons/icon_buttons/stateful.yaml
                     vars:
-                      uid: living_room_tv
+                      uid: media_player.wohnzimmer
                       icon_on: "\U000F0425"
                       icon_off: "\U000F0425"
                       <<: *button_widget_vars
