@@ -161,7 +161,7 @@ lvgl:
                   on_short_click:
                     - homeassistant.action:
                         action: media_player.toggle
-                        data: { entity_id: media_player.wohnzimmer }
+                        data: { entity_id: media_player_wohnzimmer }
 
               - button: # dim scene
                   <<: !include
